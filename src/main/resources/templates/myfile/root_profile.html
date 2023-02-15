@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:17:47 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>profile</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <style>
+        .myimg{
+            /*width: 473px;*/
+            /*height: 315px;*/
+            position: relative;
+            overflow: hidden;
+        }
+        .mying img{
+            float: left;
+        }
+        .navleft,.navright{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            color: white;
+            z-index: 100;
+            /*display: none;*/
+        }
+        .navleft{
+            left: 0;
+        }
+        .navright{
+            right: 0;
+        }
+        .navleft:hover,
+        .navright:hover{
+            /*display: block;*/
+            border: 1px yellow solid;
+            background: yellow;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 class="myaccount">账号资料信息</h5>
+                    </div>
+                    <div>
+                        <div class="myimg ibox-content no-padding border-left-right" >
+                            <img alt="image" class="img-responsive img1" src="/img/mynone.png">
+                            <img alt="image" class="img-responsive img2" src="/img/mynone.png">
+                            <div class="navleft" onclick="navImg1()"><</div>
+                            <div class="navright" onclick="navImg2()">></div>
+                        </div>
+                        <div class="ibox-content profile-content mysfz">
+                            身份证信息:<input type="password" readonly value="123123" class="mySFZ">
+                            <button class="btn btn-info btn-circle mybtn1" type="button" onclick="onBtn1()"><i class="fa fa-check"></i>
+                            </button>
+                            <button class="btn btn-warning btn-circle mybtn2" type="button" style="display: none" onclick="onBtn2()"><i class="fa fa-times"></i>
+                            </button>
+                            <button class="btn btn-success " type="button" onclick="onclick_pass()"><i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">审核通过</span>
+                            </button>
+
+                        </div>
+                        <div class="ibox-content profile-content myzg" style="display: none">
+                            资格证信息:<input type="password" readonly value="123123" class="myZG">
+                            <button class="btn btn-info btn-circle mybtn1" type="button" onclick="onBtn1()"><i class="fa fa-check"></i>
+                            </button>
+                            <button class="btn btn-warning btn-circle mybtn2" type="button" style="display: none" onclick="onBtn2()"><i class="fa fa-times"></i>
+                            </button>
+<!--                            <button class="btn btn-success " type="button" onclick="onclick_pass()"><i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">审核通过</span>-->
+<!--                            </button>-->
+                        </div>
+
+                        <div class="ibox-content profile-content">
+                            <h4><strong class="myname">Beaut-zihan</strong></h4>
+                            <p><i class="fa fa-map-marker"></i> <span class="myplace">上海市闵行区绿地科技岛广场A座2606室</span></p>
+                            <h5>
+                                关于我
+                            </h5>
+                            <p class="mytalk">
+                                会点前端技术，div+css啊，jQuery之类的，不是很精；热爱生活，热爱互联网，热爱新技术；有一个小的团队，在不断的寻求新的突破。
+                            </p>
+                            <div class="row m-t-lg">
+                                <div class="col-sm-4 myassess">
+                                    <span class="bar">5,3,9,6,5,9,7,3,5,2</span>
+                                    <h5><strong class="myfinsh">169</strong> 完成订单</h5>
+                                </div>
+                                <div class="col-sm-4 myassess">
+                                    <span class="line">5,3,9,6,5,9,7,3,5,2</span>
+                                    <h5><strong class="myscope">28</strong> 平均评价</h5>
+                                </div>
+                                <div class="col-sm-4 myassess">
+                                    <span class="bar">5,3,2,-1,-3,-2,2,3,5,2</span>
+                                    <h5><strong class="mycomplain">240</strong> 投诉数量</h5>
+                                </div>
+                            </div>
+
+                            <div class="row m-t-lg w_profile">
+                                <div class="col-sm-4">
+                                    <div class="ibox float-e-margins">
+
+                                        <div class="ibox-content text-center h-200">
+                                            <div style="width: 65px">
+                                                <div style="float: left;color: #1ab394">总评价</div>
+                                                <div style="float: left;color: #66AFE9">已评价</div>
+                                                <div style="float: left;color: #b3b3b3">未评价</div>
+                                            </div>
+                                            <span id="sparkline10"></span>
+                                        </div>
+                                    </div>
+
+                                    <!--                                <button>查看人员服务情况</button>-->
+                                    <!--                                <button class="btn btn-info" type="button"><i class="fa fa-paste"></i>查看人员服务情况</button>-->
+<!--                                    <a class="btn btn-warning btn-rounded w_warning" onclick="a_onclick_warning()">警告该人员</a>-->
+                                    <a class="btn btn-danger btn-rounded w_danger" onclick="a_onclick_danger()">注销该人员账号</a>
+                                </div>
+                            </div>
+<!--                            <div class="user-button">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-sm-6">-->
+<!--                                        <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> 发送消息</button>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-sm-6">-->
+<!--                                        <button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-coffee"></i> 赞助</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>人员投诉情况</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="profile.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="profile.html#">选项1</a>
+                                </li>
+                                <li><a href="profile.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div>
+                            <div class="feed-activity-list myfeed">
+
+                            </div>
+
+                            <button class="btn btn-primary btn-block m" onclick="onclick_more()"><i class="fa fa-arrow-down"></i> 显示更多</button>
+
+                            <div class="col-sm-3 mysk-wave" style="margin-left: 40%;display: none">
+                                <div class="spiner-example">
+                                    <div class="sk-spinner sk-spinner-wave">
+                                        <div class="sk-rect1"></div>
+                                        <div class="sk-rect2"></div>
+                                        <div class="sk-rect3"></div>
+                                        <div class="sk-rect4"></div>
+                                        <div class="sk-rect5"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+</html>
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/js/content.min.js?v=1.0.0"></script>
+<script src="/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="/js/demo/peity-demo.min.js"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script src="/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="/js/demo/sparkline-demo.min.js"></script>
+<script src="/myjs/root/profile.js"></script>
+
+

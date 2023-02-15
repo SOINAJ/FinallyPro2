@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.finallypro2.dao.ReadyDao">
+
+
+    <select id = "getAllGoodMes" resultType= "com.finallypro2.POJO.Ready_work">
+        select * from ready_work where Anum = #{param1} ORDER BY id desc
+    </select>
+
+    <select id = "getAllGoodMesWork" resultType= "com.finallypro2.POJO.Ready_work">
+        select * from ready_work where Bnum = #{param1} ORDER BY id desc
+    </select>
+
+
+
+
+    <insert id="update_new_ReadyWork" parameterType="com.finallypro2.POJO.Ready_work">
+        insert into ready_work (place,message,time_start,time_end,Anum,Bnum,market)
+        values (#{place},#{message},#{time_start},#{time_end},#{Anum},#{Bnum},#{market})
+    </insert>
+
+    <update id="update_Ready_Good">
+        update ready_work set state = -1 where id in ( ${param1} )
+    </update>
+
+    <select id = "get_WorkReadynum_user" resultType="Integer">
+        select count(*) from ready_work where Anum = #{param1}
+    </select>
+
+    <select id = "get_WorkReadynum_work" resultType= "Integer">
+        select count(*) from ready_work where Bnum = #{param1}
+    </select>
+
+    <select id = "get_WorkReady_user" resultType= "com.finallypro2.POJO.Ready_work">
+        select * from ready_work where Anum = #{param1} ORDER BY id desc limit ${param2} ,6
+    </select>
+
+    <select id = "get_WorkReady_work" resultType= "com.finallypro2.POJO.Ready_work">
+        select * from ready_work where Bnum = #{param1} ORDER BY id desc limit ${param2} ,6
+    </select>
+
+    <insert id="updataGoods_work">
+        insert into goods_work (Anum,Bnum,time_start,time_end,place,message,market)
+        select Anum,Bnum,time_start,time_end,place,message,market from ready_work where id = #{param1}
+    </insert>
+
+    <update id="updataReady_work">
+        update ready_work set state = #{param2} where id = #{param1}
+    </update>
+</mapper>

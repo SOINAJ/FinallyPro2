@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!--    <link th:href="@{/static/bootstrap/bootstrap/css/bootstrap.min.css}">-->
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+
+    <style>
+        table{
+            table-layout: fixed;
+            word-break: break-all;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body class="worksNot" style="background: #f2f2f2">
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h3>个人订单信息页面  -->>  订单取消申请页面</h3>
+    </div>
+
+
+    <div id="toolbar">
+        <button id="button1" class="btn btn-info">同意订单取消</button>
+        <button id="button2" class="btn btn-info">拒接订单取消</button>
+    </div>
+
+    <table id="table"
+           data-height="350"
+           class="table table-striped"
+           data-toggle="table"
+           data-show-columns="true"
+           data-buttons-class="primary"
+           data-events="operateEvents"
+           data-detail-formatter="detailFormatter"
+           data-toolbar="#toolbar"
+           data-pagination="true"
+    >
+    </table>
+
+</div>
+</body>
+</html>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
+<script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<!--<script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>-->
+<script src="/myjs/test/bootstrap_work_return.js"></script>
+<script src="/js/plugins/layer/layer.min.js"></script>
+<script src="/js/demo/layer-demo.min.js"></script>
+<script src="/myjs/isEmpty.js"></script>
+
+

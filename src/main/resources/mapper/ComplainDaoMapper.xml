@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.finallypro2.dao.ComplainDao">
+    <select id="get_Complain_num" resultType="Integer">
+        select count(*) from complain where
+        <if test='param1 == "W" '>
+            work = #{param2}
+        </if>
+        <if test='param1 == "U" '>
+            user = #{param2}
+        </if>
+    </select>
+
+    <select id="get_Conplain_byPart" resultType="com.finallypro2.POJO.Complain">
+        select * from complain where
+        <if test='param1 == "W" '>
+            work = #{param2}
+        </if>
+        <if test='param1 == "U" '>
+            user = #{param2}
+        </if>
+        limit ${param3},6
+    </select>
+
+    <select id="get_Complain_user" resultType="com.finallypro2.POJO.Complain">
+        select * from complain where user = #{param1} ORDER BY id desc limit ${param2},6
+    </select>
+
+
+    <update id="updata_Return_Complain">
+        update complain set talk = #{param1} where id = #{param2}
+    </update>
+
+    <update id="updata_Complain_Mes" parameterType="Integer">
+        update complain set state = 1 where id = #{param1}
+    </update>
+
+    <select id="get_Complain_Mes" resultType="com.finallypro2.POJO.Complain">
+        select * from complain where id = #{param1}
+    </select>
+
+    <select id="get_root_number" resultType="String">
+        select count(*) from complain
+    </select>
+
+    <select id="get_root_Complain" resultType="com.finallypro2.POJO.Complain">
+        select * from complain ORDER BY id desc limit ${param1} ,6
+    </select>
+
+    <insert id="post_user_Complain" parameterType="com.finallypro2.POJO.Complain">
+        insert into complain (user,work,date,message,state) values (#{user},#{work},#{date},#{message},#{state})
+    </insert>
+
+</mapper>

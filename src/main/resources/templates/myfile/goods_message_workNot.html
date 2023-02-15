@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="/mycss/goods.css"/>
+    <!--<script type="text/javascript" src="js/myform.js"></script>-->
+    <!--<link rel="stylesheet" href="css/myform.css" />-->
+</head>
+
+<body id="body">
+<div class="index_v1-main">
+    <div class="nav-main">
+        <div style="text-align: center;" class="nav-main-check">
+            <h1 style="background: #f2f2f2; margin-top: 2px;">个人订单信息页面</h1>
+            <p style="background: #f2f2f2; margin-top: -10px;"></p>
+        </div>
+
+
+
+
+
+        <div class="text-data-main">
+            <span style="text-align: center;"><h3>正在进行的订单信息</h3></span>
+            <span class="data-main0"><a class="number">订单号</a></span>
+            <span class="data-main0"><a class="market">服务类型</a></span>
+            <span class="data-main0"><a class="employee">雇主</a></span>
+            <span class="data-main0"><a class="employee">地点</a></span>
+            <span class="data-main1" style="width: 45%"><a>工作内容简介</a></span>
+            <!--<div class="container">1</div>-->
+            <span class="data-main2"><a>工作时间</a></span>
+
+            <span class="data-main3"><a>订单状态</a></span>
+
+        </div>
+
+        <div id="notfinishShow" class="show notfinishShow">
+
+        </div>
+
+        <br/>
+
+        <div class="other" style="text-align: center">
+            <a class="a_few"> < </a>
+            <input type="text" class="number-select" value="1" disabled="disabled"/>
+            <a class="a_more"> > </a>&nbsp&nbsp&nbsp
+            <div class="other-main">
+                到第<input type="text" class="number-find" value="1"/>&nbsp页&nbsp
+                <button class="button3" onclick="button3_onclick()">确认</button>
+                &nbsp&nbsp&nbsp 共 <a class="a_number"></a> 页&nbsp&nbsp&nbsp
+                <select class="number-last">
+                    <option>6条/页</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/myjs/work/message/goods_workNot.js" type="text/javascript"></script>
+<script src="/myjs/work/page/Page_jump_goodsworkNot.js" type="text/javascript"></script>
+<script src="/myjs/isEmpty.js" type="text/javascript"></script>
+<!--<script src="js/bootstrap.min.js?v=3.3.6"></script>-->
+<!--<script src="js/content.min.js?v=1.0.0"></script>-->
+<!--<script src="js/plugins/iCheck/icheck.min.js"></script>-->

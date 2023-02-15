@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.finallypro2.dao.U_W_MesDao">
+
+
+    <delete id="delete_work_message">
+        delete from work_message where part = #{param1}
+    </delete>
+    <delete id="delete_work_login">
+        delete from login_id where part = #{param1}
+    </delete>
+
+
+    <update id="pass_U_W">
+        update
+        <if test='param1 == "U" '>
+            user_message
+        </if>
+        <if test='param1 == "W" '>
+            work_message
+        </if>
+        set state = 1 where part = #{param2}
+    </update>
+
+<!--    <select id="get_U_Mes" parameterType="Integer" resultType="com.finallypro2.POJO.User_message">-->
+<!--        select * from user_message where id = #{param1}-->
+<!--    </select>-->
+<!--    <select id="get_W_Mes" parameterType="Integer" resultType="com.finallypro2.POJO.Work_message">-->
+<!--        select * from work_message where id = #{param1}-->
+<!--    </select>-->
+
+    <select id="root_get_UW_num" parameterType="String" resultType="Integer">
+        select count(*) from
+        <if test='param1 == "U" '>
+            user_message
+        </if>
+        <if test='param1 == "W" '>
+            work_message
+        </if>
+    </select>
+
+    <select id="root_get_U_mes" resultType="com.finallypro2.POJO.User_message">
+        select * from user_message limit ${arg1} ,6
+    </select>
+    <select id="root_get_W_mes" resultType="com.finallypro2.POJO.Work_message">
+        select * from work_message limit ${arg1} ,6
+    </select>
+
+
+    <select id="get_Url_img_Work" resultType="com.finallypro2.POJO.Work_message">
+        select sfz,prove from work_message where part = #{param1}
+    </select>
+
+    <select id="get_Url_img_User" resultType="com.finallypro2.POJO.User_message">
+        select sfz from user_message where part = #{param1}
+    </select>
+
+    <update id="updata_Url_Bos_B">
+        update work_message
+        <set>
+            <if test="param1 == 'SFZ'">
+                sfz = #{param2}
+            </if>
+
+            <if test="param1 == 'ZG'">
+                prove = #{param2}
+            </if>
+        </set>
+        where part = #{param3}
+
+    </update>
+
+    <update id="updata_Url_Bos_A">
+        update user_message
+        set sfz = #{arg0} where part = #{arg1}
+    </update>
+
+
+    <select id="getNamefrompart_W" resultType="com.finallypro2.POJO.Work_message">
+        select part, name
+        from work_message
+        where part in (${arg0})
+    </select>
+
+    <select id="getNamefrompart_U" resultType="com.finallypro2.POJO.User_message">
+        select part, name
+        from user_message
+        where part in (${arg0})
+    </select>
+
+    <select id="getGoodsnum" resultType="Integer">
+        select count(*)
+        from goods_work
+        where bnum = #{param1}
+          and bend != ''
+    </select>
+
+    <select id="getGoodsScope" resultType="Integer">
+        select sum(scope)
+        from goods_work
+        where bnum = #{param1}
+          and bend != '' and scope != ''
+    </select>
+
+    <select id="getGoodsScope_null" resultType="Integer">
+        select count(*)
+        from goods_work
+        where bnum = #{param1}
+          and bend != '' and scope is null
+    </select>
+
+    <sql id="updateU">
+        update user_message
+    </sql>
+    <!--     phone = #{phone},place = #{place},talk = #{talk} where part = #{part}-->
+    <update id="get_UMesage" parameterType="com.finallypro2.POJO.User_message">
+        <include refid="updateU"></include>
+        <set>
+            <if test="usr != null">
+                <if test="usr.phone != null">
+                    phone = #{usr.phone},
+                </if>
+                <if test="usr.place != null">
+                    place = #{usr.place}
+                </if>
+            </if>
+        </set>
+        <where>
+            <if test="usr != null and usr.part != null">
+                part = #{usr.part}
+            </if>
+        </where>
+    </update>
+
+
+    <select id="get_U_mes" resultType="com.finallypro2.POJO.User_message">
+        select *
+        from user_message
+        where part = #{param1}
+    </select>
+
+    <select id="get_W_mes" resultType="com.finallypro2.POJO.Work_message">
+        select *
+        from work_message
+        where part = #{param1}
+    </select>
+
+    <update id="updata_new_WorkMes" parameterType="com.finallypro2.POJO.Work_message">
+        update work_message
+        set phone = #{phone},
+            place = #{place},
+            talk  = #{talk}
+        where part = #{part}
+    </update>
+
+    <update id="updata_new_UserMes" parameterType="com.finallypro2.POJO.User_message">
+        update user_message
+        set phone = #{phone},
+            place = #{place},
+            talk  = #{talk}
+        where part = #{part}
+    </update>
+
+    <select id="getWorkMes_num" resultType="Integer">
+        select count(*)
+        from work_message
+    </select>
+
+    <select id="get_Work_Mes" resultType="com.finallypro2.POJO.Work_message">
+        select *
+        from work_message limit ${param1} ,6
+    </select>
+
+    <select id="getUserMes" resultType="com.finallypro2.POJO.User_message">
+        select *
+        from user_message
+        where part in (${param1})
+    </select>
+
+    <select id="getWorkMes" resultType="com.finallypro2.POJO.Work_message">
+        select *
+        from work_message
+        where part in (${param1})
+    </select>
+
+</mapper>

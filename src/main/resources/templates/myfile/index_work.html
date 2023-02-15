@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:16:41 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>家政系统-服务员</title>
+
+    <!--    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">-->
+    <!--    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">-->
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link href="/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+<a class="mytitle" style="display: none"></a>
+<a class="mycontent" style="display: none"></a>
+<button id="mybtn1" style="display: none" onclick="getToastr()"></button>
+
+<div id="wrapper">
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close"><i class="fa fa-times-circle"></i>
+        </div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                               <span class="block m-t-xs"><strong
+                                       class="font-bold">家政系统-服务员子系统</strong></span>
+                                <span id="myname" class="text-muted text-xs block"><b class="caret"></b></span>
+                                    <span id="mypart"></span>
+                                </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="J_menuItem" href="../myfile/W_Message.html">个人资料</a>
+                            </li>
+                            <li><a class="J_menuItem" href="../myfile/people_Mes.html">证明上传</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="../logout">安全退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--                <li>-->
+                <!--                    <a class="J_menuItem" href="../myfile/Talk_test_work.html">-->
+                <!--                        <i class="fa fa-columns"></i>-->
+                <!--                        <span class="nav-label">聊天</span>-->
+                <!--                    </a>-->
+                <!--                </li>-->
+                <li>
+                    <a class="J_menuItem" href="../myfile/goods_ready_work.html">
+                        <i class="fa fa-home"></i>
+                        <span class="nav-label">兼职接单</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="J_menuItem" href="">
+                        <i class="fa fa-columns"></i>
+                        <span class="nav-label">兼职找单</span>
+                        <span class="fa arrow"></span>
+                    </a>
+
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="../myfile/goods_market_1.html">家教兼职</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="../myfile/goods_market_2.html">清洁兼职</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="../myfile/goods_market_3.html">保姆兼职</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a class="J_menuItem" href="">
+                        <i class="fa fa fa-bar-chart-o"></i>
+                        <span class="nav-label">个人(挂/接)单信息</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a class="J_menuItem" href="../test/goods_message_workNot_return.html">(申请取消)订单</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="../test/goods_message_work_test.html">(完成)订单</a>
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="../test/goods_message_workNot_test.html">(进行)订单</a>
+                        </li>
+                        <!--                        <li>-->
+                        <!--                            <a class="J_menuItem" href="../myfile/goods_message_work.html">(测试)订单</a>-->
+                        <!--                        </li>-->
+                        <!--                        <li>-->
+                        <!--                            <a class="J_menuItem" href="../myfile/goods_message_workNot.html">(进行)订单</a>-->
+                        <!--                        </li>-->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航结束-->
+
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <div class="row content-tabs">
+            <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs J_menuTabs">
+                <div class="page-tabs-content">
+                    <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
+                </div>
+            </nav>
+            <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
+            </button>
+            <div class="btn-group roll-nav roll-right">
+                <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
+
+                </button>
+                <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                    <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                    </li>
+                    <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="../logout" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+        </div>
+        <div class="row J_mainContent" id="content-main">
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="../myfile/hello_work.html"
+                    frameborder="0" data-id="index_v1.html" seamless></iframe>
+        </div>
+
+    </div>
+    <!--右侧部分结束-->
+</div>
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/js/plugins/layer/layer.min.js"></script>
+<script src="/js/hplus.min.js?v=4.1.0"></script>
+<script type="text/javascript" src="/js/contabs.min.js"></script>
+<script src="/js/plugins/pace/pace.min.js"></script>
+<script src="/myjs/checkUeser.js"></script>
+<script src="/myjs/work/return_goods.js"></script>
+<script src="/myjs/notice_get.js"></script>
+<script src="/js/plugins/toastr/toastr.min.js"></script>
+<script src="/layui/layui.js"></script>
+<script>
+    var myurl = ""
+    $.ajax({
+        url: "../checkUsers",
+        type: "POST",
+        datatype: "json",
+        contentType: "application/json:charset=UTF-8",
+        success: function (dat) {
+            myurl += dat.data.part
+        },
+        error: function (e) {
+            console.log("error")
+        }
+    })
+
+
+    var websocket
+    //以下为 layim 最新版写法
+    layui.config({
+        layimPath: '/dist/' //配置 layim.js 所在目录
+        , layimAssetsPath: '/dist/layim-assets/' //layim 资源文件所在目录
+    }).extend({
+        layim: layui.cache.layimPath + 'layim' //配置 layim 组件所在的路径
+    }).use('layim', function (layim) { //加载组件
+
+
+        layim.on('ready', function (res) {
+            layui.use('layim', function (layim) {
+
+                if ('WebSocket' in window) {
+                    websocket = new WebSocket("ws://localhost:8080/mysocket/" + myurl);
+                } else {
+                    alert('Not support websocket')
+                }
+                websocket.onerror = function () {
+                    // setMessageInnerHTML("error");
+                };
+                //连接成功建立的回调方法
+                websocket.onopen = function (event) {
+                    // websocket.send("连接成功")
+                    // setMessageInnerHTML("Loc MSG: 成功建立连接");
+                }
+                //接收到消息的回调方法
+                websocket.onmessage = function (event) {
+                    // console.log(event)
+                    var arr = event.data.split(",")
+                    console.log(arr)
+                    for (var i = 2; i < arr.length; i++) {
+                        layim.getMessage({
+                            username: arr[1]
+                            , id: arr[0]
+                            , avatar: ""
+                            , type: "friend"
+                            , content: arr[i]
+                        })
+                    }
+                }
+                //连接关闭的回调方法
+                websocket.onclose = function () {
+                    // setMessageInnerHTML("Loc MSG:关闭连接");
+                }
+                //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+                window.onbeforeunload = function () {
+                    websocket.close();
+                }
+
+                layim.on("sendMessage", function (res) {
+                    console.log(res)
+                    var mine = res.mine.username
+                    var message = res.mine.content
+                    var to = res.to.id
+                    var socketMsg = {msg: message, toUser: to, fromUser: mine};
+                    websocket.send(JSON.stringify(socketMsg))
+                })
+            })
+        })
+
+        //先来个客服模式压压精
+        layim.config({
+            init: {
+                url: '../workTalks' //接口地址（返回的数据格式见下文）
+                , type: 'get' //默认get，一般可不填
+                // ,data: {} //额外参数
+            },
+            right: "50px",
+            isgroup: false,
+        })
+    });
+
+
+</script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:17:11 GMT -->
+</html>

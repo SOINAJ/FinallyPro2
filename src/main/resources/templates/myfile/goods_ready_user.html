@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="/mycss/goods.css"/>
+    <link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!--<script type="text/javascript" src="js/myform.js"></script>-->
+    <!--<link rel="stylesheet" href="css/myform.css" />-->
+</head>
+
+<body id="body">
+<div class="index_v1-main">
+    <div class="nav-main">
+        <div style="text-align: center;" class="nav-main-check">
+            <h1 style="background: #f2f2f2; margin-top: 2px;">待接订单界面</h1>
+            <p style="background: #f2f2f2; margin-top: -10px;"></p>
+        </div>
+
+
+        <div class="text-data-main">
+            <span style="text-align: center;"><h3>等待接受的订单消息</h3></span>
+            <span class="data-main0"><a class="number">预备订单号</a></span>
+            <span class="data-main0"><a class="employee">雇员</a></span>
+            <span class="data-main0"><a class="employee">地点</a></span>
+            <span class="data-main1" style="width: 50%"><a>工作内容简介</a></span>
+            <!--<div class="container">1</div>-->
+            <span class="data-main2"><a>工作时间</a></span>
+
+            <span class="data-main3"><a>是否接单</a></span>
+
+        </div>
+
+        <div id="getShow" class="show">
+            <div class="text-data-show">
+                <span class="data-main0"><a>1</a></span>
+                <span class="data-main0"><a data-toggle="modal" href="goods_user.html#modal-form1">A1</a></span>
+                <span class="data-main0"><a>A7-927</a></span>
+                <span class="data-main1"><a>订单信息的工作内容：保姆</a></span>
+                <span class="data-main2"><a>2022/06/18 08:00 ~ 2022/06/18 08:00</a></span>
+                <!--<span class="data-main3">未完成</span>-->
+                <span class="data-main3">
+                    <button class="button1 mybut1" onclick="putReady_work('1','1')"><div class="zindex1"><img class="imgcss2" src="/myimg/write.png">接受</div></button>
+                    <button class="button2 mybut1_2" onclick="putReady_work('0','1')"><div class="zindex1"><img class="imgcss2" src="/myimg/write.png">拒接</div></button>
+                </span>
+            </div>
+
+        </div>
+
+        <br/>
+
+
+        <div class="other" style="text-align: center">
+            <a class="a_few"> < </a>
+            <input type="text" class="number-select" value="1" disabled="disabled"/>
+            <a class="a_more"> > </a>&nbsp&nbsp&nbsp
+            <div class="other-main">
+                到第<input type="text" class="number-find" value="1"/>&nbsp页&nbsp
+                <button class="button3" onclick="button3_onclick()">确认</button>
+                &nbsp&nbsp&nbsp 共 <a class="a_number"></a> 页&nbsp&nbsp&nbsp
+                <select class="number-last">
+                    <option>6条/页</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/myjs/user/message/ready_user.js" type="text/javascript"></script>
+<script src="/myjs/user/page/Page_jump_readywork.js" type="text/javascript"></script>
+<script src="/myjs/isEmpty.js" type="text/javascript"></script>
+<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>
+<!--<script src="js/bootstrap.min.js?v=3.3.6"></script>-->
+<!--<script src="js/content.min.js?v=1.0.0"></script>-->
+<!--<script src="js/plugins/iCheck/icheck.min.js"></script>-->

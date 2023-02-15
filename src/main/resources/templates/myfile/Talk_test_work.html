@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="/mycss/talk_test.css"  rel="stylesheet">
+</head>
+<body>
+
+<h3>聊天页面</h3>
+
+<div class="talk_main">
+    <div class="talk_friend">
+<!--        <h4 class="B2" onclick="conectWebSocket(this)">B2</h4>-->
+    </div>
+    <div class="talk_uname"><h3 class="uname"></h3></div>
+    <div class="talk_message">
+    </div>
+    <div class="talk_send" style="display: none">
+        <textarea class="mytextarea" style="background: #f3f3f4"></textarea>
+        <button class="btn_send" onclick="send_mes()">发送</button>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="/myjs/isEmpty.js"></script>
+<script src="/myjs/work/talk_test_work.js" type="text/javascript"></script>
+<script src="/myjs/websocket_conect.js" type="text/javascript"></script>

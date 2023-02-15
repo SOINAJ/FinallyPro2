@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.finallypro2.dao.Return_goodsDao" >
+
+    <update id="update_return_W_U_mesage">
+        update
+        <if test=' param1 == "W" '>
+            return_goods set message = 1 where Bnum = #{param2} and message = 0
+        </if>
+        <if test=' param1 == "U" '>
+            return_goods_w set message = 1 where Anum = #{param2} and message = 0
+        </if>
+
+    </update>
+
+    <select id="select_message_W_U_mesage" resultType="com.finallypro2.POJO.Return_goods">
+        select * from
+        <if test=' param1 == "W" '>
+            return_goods where Bnum = #{param2}
+        </if>
+        <if test=' param1 == "U" '>
+            return_goods_w where Anum = #{param2}
+        </if>
+        and message = 0
+    </select>
+
+    <select id="select_have_Return" resultType="com.finallypro2.POJO.Return_goods">
+        select * from
+        <if test=' param1 == "W" '>
+            return_goods where Bnum = #{param2} and state is null
+        </if>
+        <if test=' param1 == "U" '>
+            return_goods_w where Anum = #{param2} and state is null
+        </if>
+    </select>
+
+</mapper>

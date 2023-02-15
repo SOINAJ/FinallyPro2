@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+  <link href="/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
+  <link href="/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+</head>
+<style>
+  .talk_main{
+    width: 75%;
+    height: 500px;
+    border: #CCCCCC 1px solid;
+    position: relative;
+  }
+
+  .talk_friend{
+    width: 20%;
+    height: 100%;
+    border-right: #CCCCCC 1px solid;
+    text-align: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .talk_friend h4{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .talk_friend h4:hover{
+    background: #CCCCCC;
+    cursor: default;
+    border: #CCCCCC 1px solid;
+  }
+
+
+  .talk_uname{
+    width: 80%;
+    height: 80px;
+    border-bottom: #CCCCCC 1px solid;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    line-height: 30px;
+    box-sizing: border-box;
+  }
+  .talk_uname h3{
+    cursor: pointer;
+  }
+
+  .talk_message{
+    background: #fafafa;
+    width: 80%;
+    height: 350px;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    margin-top: -80px;
+    /*scrollbar-width: none;*/
+  }
+
+  .talk_send{
+    width: 80%;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    word-break: break-all;
+    /*white-space: nowrap; 文本不换行*/
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-top: #CCCCCC 1px solid;
+  }
+  .btn_send{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .mytextarea{
+    resize:none;
+    height: 70px;
+    width: 95%;
+    border: none;
+    outline: none;
+
+  }
+
+  .talk_friend::-webkit-scrollbar,
+  .talk_message::-webkit-scrollbar,
+  .mytextarea::-webkit-scrollbar
+  {
+    display: none;
+  }
+
+  .youmes{
+    word-break: break-all;
+    margin-top: 10px;
+    margin-left: 20px;
+    background:  #ffffff;
+    display: inline-block;
+    border: 4px solid #ffffff;
+  }
+  .mymes{
+
+    word-break: break-all;
+    margin-top: 10px;
+    margin-right: 20px;
+    background:  greenyellow;
+    display: inline-block;
+    border: 4px solid greenyellow;
+  }
+  .mytestyou,
+  .mytestmy{
+    width: 70%;
+  }
+  .mytestyou{
+    float: left;
+  }
+  .mytestmy{
+    float: right;
+  }
+</style>
+<body>
+<div class="small-chat-box fadeInRight animated" style="width: 500px;height: 500px;">
+
+
+  <div class="heading" draggable="true" style="height: 50px;text-align: center;line-height: 40px;">
+<!--    <small class="chat-date pull-right">-->
+<!--      -->
+<!--    </small> -->
+    <label>老王</label>
+  </div>
+
+  <div class="talk_main" style="height: 450px;width: 100%;">
+    <div class="talk_friend">
+      <h4 class="laow">老王</h4>
+      <h4 class="laoc">老陈</h4>
+    </div>
+<!--    <div class="talk_uname"><h3 class="uname">老王</h3></div>-->
+    <div id="talk_message" class="talk_message">
+      <div class="mytestyou">
+        <span class="youmes">1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="youid">老王</div>-->
+        <p></p>
+      </div>
+      <div class="mytestyou">
+        <span class="youmes">1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="youid">老王</div>-->
+        <p></p>
+      </div>
+      <div class="mytestyou">
+        <span class="youmes">1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="youid">老王</div>-->
+        <p></p>
+      </div>
+      <div class="mytestyou">
+        <span class="youmes">1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="youid">老王</div>-->
+        <p></p>
+      </div>
+      <div class="mytestmy">
+        <span class="mymes">完成1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="myid">老张</div>-->
+        <p></p>
+      </div>
+      <div class="mytestmy">
+        <span class="mymes">完成1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="myid">老张</div>-->
+        <p></p>
+      </div>
+      <div class="mytestmy">
+        <span class="mymes">完成1232312231231231231231231231231231231231233123123123123123123</span>
+        <!--<div class="myid">老张</div>-->
+        <p></p>
+      </div>
+
+    </div>
+    <div class="talk_send">
+      <textarea class="mytextarea"></textarea>
+      <button class="btn_send" onclick="send_mes()">发送</button>
+    </div>
+  </div>
+
+<!--  <div class="content">-->
+
+<!--    <div class="left">-->
+<!--      <div class="author-name">-->
+<!--        Beau-zihan <small class="chat-date">-->
+<!--        10:02-->
+<!--      </small>-->
+<!--      </div>-->
+<!--      <div class="chat-message active">-->
+<!--        你好-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--    <div class="right">-->
+<!--      <div class="author-name">-->
+<!--        游客-->
+<!--        <small class="chat-date">-->
+<!--          11:24-->
+<!--        </small>-->
+<!--      </div>-->
+<!--      <div class="chat-message">-->
+<!--        你好，请问H+有帮助文档吗？-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="left">-->
+<!--      <div class="author-name">-->
+<!--        Beau-zihan-->
+<!--        <small class="chat-date">-->
+<!--          08:45-->
+<!--        </small>-->
+<!--      </div>-->
+<!--      <div class="chat-message active">-->
+<!--        有，购买的H+源码包中有帮助文档，位于docs文件夹下-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="right">-->
+<!--      <div class="author-name">-->
+<!--        游客-->
+<!--        <small class="chat-date">-->
+<!--          11:24-->
+<!--        </small>-->
+<!--      </div>-->
+<!--      <div class="chat-message">-->
+<!--        那除了帮助文档还提供什么样的服务？-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="left">-->
+<!--      <div class="author-name">-->
+<!--        Beau-zihan-->
+<!--        <small class="chat-date">-->
+<!--          08:45-->
+<!--        </small>-->
+<!--      </div>-->
+<!--      <div class="chat-message active">-->
+<!--        1.所有源码(未压缩、带注释版本)；-->
+<!--        <br> 2.说明文档；-->
+<!--        <br> 3.终身免费升级服务；-->
+<!--        <br> 4.必要的技术支持；-->
+<!--        <br> 5.付费二次开发服务；-->
+<!--        <br> 6.授权许可；-->
+<!--        <br> ……-->
+<!--        <br>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--  </div>-->
+<!--  <div class="form-chat">-->
+<!--&lt;!&ndash;    <div class="input-group input-group-sm">&ndash;&gt;-->
+<!--&lt;!&ndash;      <input type="text" class="form-control"> <span class="input-group-btn"> <button&ndash;&gt;-->
+<!--&lt;!&ndash;            class="btn btn-primary" type="button">发送&ndash;&gt;-->
+<!--&lt;!&ndash;                </button> </span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    <div class="talk_send">-->
+<!--      <textarea class="mytextarea"></textarea>-->
+<!--      <button class="btn_send" onclick="send_mes()">发送</button>-->
+<!--    </div>-->
+  </div>
+
+</div>
+<div id="small-chat">
+  <span class="badge badge-warning pull-right">5</span>
+  <a class="open-small-chat">
+    <i class="fa fa-comments"></i>
+
+  </a>
+</div>
+</div>
+
+</body>
+</html>
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/js/plugins/layer/layer.min.js"></script>
+<script src="/js/hplus.min.js?v=4.1.0"></script>
+<script type="text/javascript" src="/js/contabs.min.js"></script>
+<script src="/js/plugins/pace/pace.min.js"></script>
+
+<script>
+  // $(".talk_message").scroll(function(){
+  //   window.scrollTo(0, document.documentElement.clientHeight);
+  // })
+  //
+  //
+  //
+  //
+  // // $(document).ready(function(){
+  // //   var scrollHight = this.scrollHeight;
+  // //   console.log(scrollHight)
+  // //   document.documentElement.scrollTop=scrollHight
+  // // })
+  //   // $(".talk_message").scroll(function(){
+  //   //   // var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+  //   //   // //变量windowHeight是可视区的高度
+  //   //   // var windowHeight = document.documentElement.offsetHeight ||document.body.offsetHeight ;
+  //   //   // //变量scrollHeight是滚动条的总高度
+  //   //   // var scrollHeight = document.documentElement.scrollHeight||document.body.scrollHeight;
+  //   //   var scrollHight = this.scrollHeight;
+  //   //   var clientHeight = this.clientHeight;
+  //   //   var scrollTop = Math.ceil(this.clientTop);
+  //   //   console.log(scrollHight)
+  //   //   console.log(clientHeight)
+  //   //   console.log(scrollTop)
+  //   // })
+  //
+  //   window.onload = function() {
+  //
+  //     var box = document.getElementById('talk_message');
+  //     // var box = $(".talk_message");
+  //
+  //     box.addEventListener('scroll', function() {
+  //
+  //       var scrollHight = this.scrollHeight;
+  //       document.documentElement.scrollTop=scrollHight
+  //       // var clientHeight = this.clientHeight;
+  //       // var scrollTop = Math.ceil(this.clientTop);
+  //
+  //
+  //       //   console.log(scrollHight)
+  //       //   console.log(clientHeight)
+  //       //   console.log(scrollTop)
+  //       //
+  //       // if (scrollTop <= scrollHight + clientHeight) {
+  //       //   // var pNode = document.createElement('p');
+  //       //   // pNode.innerHTML = '已经到底了，看看别的吧';
+  //       //   // // box.appendChild(pNode);
+  //       //
+  //       // }
+  //     })
+  //
+  //   }
+
+
+
+
+
+</script>

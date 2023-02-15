@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+  <link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+
+<body style="background: #f2f2f2">
+<div class="panel panel-primary" style="width: 680px;height: 600px;margin-left: 300px">
+  <div class="panel-heading">
+    <h3 class="panel-title"> <i class="glyphicon glyphicon-cloud"></i> 兼职订单发布 </h3>
+  </div>
+  <p></p>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label for="firstname" class="col-sm-2 control-label">雇主</label>
+      <div class="col-sm-10">
+        <input type="text" class="mypeople form-control" id="firstname" readonly>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">服务类型</label>
+      <div class="col-sm-10">
+        <select id="mymarket" class="selectpicker" data-style="btn-primary">
+          <option value="1" selected="selected">家教</option>
+          <option value="2">清洁</option>
+          <option value="3">保姆</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">地点</label>
+      <div class="col-sm-10">
+        <div class="msg_place1" style="display: none;color: red"><span id="msg_place"></span></div>
+        <input type="text" class="myplace form-control" placeholder="请输入服务地点">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">工作内容简介</label>
+      <div class="col-sm-10">
+        <div class="msg_textarea1 animated rubberBand" style="display: none;color: red"><span id="msg_textarea"></span></div>
+					<textarea class="form-control mytextarea" style="resize: none"  rows="10" cols="30" PLACEHOLDER="工作内容简介"></textarea>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">开始工作时间</label>
+      <div class="col-sm-10">
+        <div class="msg_start_date1" style="display: none;color: red">
+          <span id="msg_start_date"></span>
+        </div>
+        <input class="start_date" type="datetime-local" name="user_date" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">结束工作时间</label>
+      <div class="col-sm-10">
+        <div class="msg_end_date1" style="display: none;color: red"><span id="msg_end_date"></span></div>
+        <input class="end_date" type="datetime-local" name="user_date" />
+      </div>
+    </div>
+
+  </form>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" style="margin-left: 250px;margin-top: -150px" onclick="getbtnFun()">提交订单</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="/myjs/user/job/job_user.js"></script>
+<script src="/myjs/isEmpty.js"></script>
+<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>

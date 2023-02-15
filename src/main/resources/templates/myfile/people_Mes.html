@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="mydivfrist" class="panel panel-warning" style="width: 680px;margin-left: 300px">
+    <div class="panel-heading">
+        <h3 class="panel-title"> <i class="glyphicon glyphicon-cloud"></i> 个人身份信息上传 </h3>
+    </div>
+
+<div class="ibox-content">
+    <form method="post" class="form-horizontal myform1" enctype="multipart/form-data" action="" target="frameForm1">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">身份证上传(上传信息面)</label>
+            <div class="col-sm-10">
+                <input id="file1" name="file1" class="filepath" accept="image/*" onchange="changepic(this)" type="file"><br>
+                <img src="/img/mynone.png" id="show1" width="230" height="180">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+                <input type="submit" id="mysubmit1" value="上传">
+            </div>
+        </div>
+
+    </form>
+    <iframe src="" name="frameForm1" style="height: 0;width: 0"></iframe>
+    <hr>
+
+    <form method="post" class="form-horizontal myform2" enctype="multipart/form-data" action="" target="frameForm2">
+        <div class="form-group myform2">
+            <label class="col-sm-2 control-label">资格证上传(上传信息页)</label>
+            <div class="col-sm-10">
+                <input id="file2" name="file2" class="filepath" accept="image/*" onchange="changepic2(this)" type="file"><br>
+                <img src="/img/mynone.png" id="show2" width="230" height="180">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+                <input type="submit" id="mysubmit2" value="上传">
+            </div>
+        </div>
+
+
+
+    </form>
+    <iframe src="" name="frameForm2" class="myiframe2" style="height: 0;width: 0"></iframe>
+
+</div>
+</div>
+
+</body>
+</html>
+<script src="/js/jquery.min.js"></script>
+<script src="/myjs/isEmpty.js"></script>
+<script src="/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="/myjs/checkPart.js"></script>
+<script src="/myjs/people_Mes/people_Mes.js"></script>
+<script src="/myjs/jq-form.js"></script>
+<!--<script>-->
+<!--    var part = window.parent.document.getElementById('mypart')-->
+<!--    console.log($(part).text())-->
+<!--</script>-->
+

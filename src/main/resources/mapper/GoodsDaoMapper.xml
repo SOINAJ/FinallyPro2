@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.finallypro2.dao.GoodsDao" >
+
+
+    <select id = "get_hava_goods" resultType="com.finallypro2.POJO.Goods_work">
+        select * from goods_work where id in ( ${param1} ) and Bend is null and Bnum != ''
+    </select>
+
+
+    <select id = "getAllGoodMesWork" resultType="com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Bnum = #{param1} and Bend != '' ORDER BY id desc
+    </select>
+
+    <select id = "getAllNotGoodMesWork" resultType="com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Bnum = #{param1} and Bend is null ORDER BY id desc
+    </select>
+
+    <select id = "getAllGoodMes" resultType="com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Anum = #{param1} and Bend != '' and Bnum != '' ORDER BY id desc
+    </select>
+
+    <select id = "getAllNotGoodMes" resultType="com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Anum = #{param1} and Bend is null and Bnum != '' ORDER BY id desc
+    </select>
+
+
+
+
+    <select id = "getMarketNum" resultType= "String">
+        select market from goods_work where bnum = #{param1} and id = #{param2}
+    </select>
+
+    <insert id="insertNewDate">
+        insert talk_people (apart, bpart) (select anum,bnum from goods_work where id = #{param1})
+    </insert>
+
+    <select id = "getOne_talk_people" resultType= "com.finallypro2.POJO.Talk_people">
+        select * from talk_people where bpart = #{param1} and apart = (select anum from goods_work where goods_work.id = #{param2})
+    </select>
+
+    <update id="put_Goods_Market">
+        update goods_work set Bnum = #{param1} where id = #{param2}
+    </update>
+
+    <select id="get_num_Market_1" resultType="Integer">
+        select count(*) from goods_work where Bnum is null and Bend is null and market = ${param1}
+    </select>
+
+    <select id="get_Goods_Market_1" resultType="com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Bnum is null and Bend is null and market = ${param2} ORDER BY id desc limit ${param1} ,6
+    </select>
+
+    <insert id="update_new_GoodsWork" parameterType="com.finallypro2.POJO.Goods_work">
+        insert into goods_work (Anum,time_start,time_end,place,message,market)
+        values (#{Anum},#{time_start},#{time_end},#{place},#{message},#{market})
+    </insert>
+
+    <update id="update_GoodsWork">
+        update goods_work set Aend = 1,Bend = 1 where id in ( ${param1} )
+    </update>
+
+    <update id="update_GoodsWork_for_return">
+        update goods_work set Bnum = null,Aend = 1,Bend = 1 where id in ( ${param1} )
+    </update>
+
+    <update id="put_GoodsScope_user">
+        update goods_work set scope = #{param1} where id = #{param2}
+    </update>
+
+    <select id = "get_WorkGoodsnum_user" resultType="Integer">
+        select count(*) from goods_work where Anum = #{param1} and Bend != '' and Bnum != ''
+    </select>
+
+    <select id = "get_WorkGoodsnum_work" resultType= "Integer">
+        select count(*) from goods_work where Bnum = #{param1} and Bend != ''
+    </select>
+
+    <select id = "get_WorkGoodsnum_userNot" resultType="Integer">
+        select count(*) from goods_work where Anum = #{param1} and Bend is null and Bnum != ''
+    </select>
+
+    <select id = "get_WorkGoodsnum_workNot" resultType= "Integer">
+        select count(*) from goods_work where Bnum = #{param1} and Bend is null
+    </select>
+
+    <select id = "get_WorkGoods_user" resultType= "com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Anum = #{param1} and Bend != '' and Bnum != '' ORDER BY id desc limit ${param2} ,6
+    </select>
+
+    <select id = "get_WorkGoods_userNot" resultType= "com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Anum = #{param1} and Bend is null and Bnum != '' ORDER BY id desc  limit ${param2} ,6
+    </select>
+
+    <select id = "get_WorkGoods_work" resultType= "com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Bnum = #{param1} and Bend != '' ORDER BY id desc limit ${param2} ,6
+    </select>
+
+    <select id = "get_WorkGoods_workNot" resultType= "com.finallypro2.POJO.Goods_work">
+        select * from goods_work where Bnum = #{param1} and Bend is null ORDER BY id desc limit ${param2} ,6
+    </select>
+
+</mapper>
